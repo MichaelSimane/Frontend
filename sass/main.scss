@@ -1,0 +1,28 @@
+// $primary: black;
+ $brown: rgb(110, 25, 25);
+
+ $btn-font-size-lg:      2rem;
+
+// Custom.scss
+// Option A: Include all of Bootstrap
+@import "../node_modules/bootstrap/scss/_functions";
+@import "../node_modules/bootstrap/scss/_variables";
+// Include any default variable overrides here (though functions won't be available)
+$spacer: 1rem !default;
+$customMargin:(
+    // 6: $spacer *22,
+    6: $spacer *20,
+    7: $spacer*21.3,
+    8: $spacer*15,
+    
+    
+);
+$spacers:map-merge($customMargin, $spacers);
+$customColors:(
+    "brown":$brown
+);
+$colors : map-merge($colors , $customColors );
+$theme-colors: map-merge($theme-colors , $customColors );
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Then add additional custom code here
